@@ -18,22 +18,30 @@ select:hover {
 }
 .btn {
   padding: 16px;
-  background-color: #1e851e;
+  background-color: #7d0c5d;
   color: #fff;
-  border-radius: 50px 10px 10px 50px;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.09);
-  width: 150px;
-  transition: all.4s;
-}
+  border-radius: 50px 4px 4px 50px;
 
-.btn-fixed:hover {
-  background-color: #106010;
+  width: 150px;
+  outline: none;
+  transition: all.2s;
+}
+.btn:hover {
+  transform: scale(1.04);
 }
 .btn-style {
   margin-left: -10px;
+
   background-color: #b14091;
+
   border-radius: 4px 50px 50px 4px;
 }
-.btn-style:hover {
+
+.active-btn {
   background-color: #7d0c5d;
+
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.unactive-btn {
+  background-color: #b14091;
 }

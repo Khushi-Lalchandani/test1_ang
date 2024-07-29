@@ -6,14 +6,32 @@
         style="font-size: 16px; text-align: center"
         class="text"
       >
-        Click any button
+        Hover over me!
       </p>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12" style="display: flex; justify-content: center">
-      <button class="btn btn-fixed" (click)="trim = true">Trim text</button>
-      <button class="btn btn-style" (click)="trim = false">Tooltip</button>
+      <button
+        class="btn btn-fixed"
+        (click)="trim = true"
+        [ngClass]="{
+          'active-btn': trim === true,
+          'unactive-btn': trim === false
+        }"
+      >
+        Trim text
+      </button>
+      <button
+        class="btn btn-style"
+        (click)="trim = false"
+        [ngClass]="{
+          'active-btn': trim === false,
+          'unactive-btn': trim === true
+        }"
+      >
+        Tooltip
+      </button>
     </div>
   </div>
   <br />
@@ -73,11 +91,11 @@
 
   <div class="row" style="text-align: center" *ngIf="trim === false">
     <p
-      appTooltipPosition
+      appTooltip
       [tooltipPosition]="position"
       [toolTipColor]="color"
       [toolTipSize]="size"
-      [tooltipText]="'Customized tool tip'"
+      [tooltipText]="'This is a custom tooltip directive'"
       style="
         cursor: pointer;
         display: inline-block;
@@ -85,11 +103,8 @@
         font-size: 20px;
         text-align: center;
       "
-      *ngIf="
-        color !== undefined && position !== undefined && size !== undefined
-      "
     >
-      Hover over me!
+      This is custom tool...
     </p>
   </div>
 </div>

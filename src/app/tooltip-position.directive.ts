@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[appTooltipPosition]',
+  selector: '[appTooltip]',
 })
 export class TooltipPositionDirective implements OnInit {
   @Input() tooltipPosition!: string;
@@ -36,12 +36,12 @@ export class TooltipPositionDirective implements OnInit {
     this.renderer.setStyle(
       this.tooltip,
       'color',
-      this.toolTipColor === undefined ? '#000' : this.toolTipColor
+      this.toolTipColor === '' ? '#000' : this.toolTipColor
     );
     this.renderer.setStyle(
       this.tooltip,
       'font-size',
-      this.toolTipSize === undefined ? `${14}px` : `${this.toolTipSize}px`
+      this.toolTipSize === 0 ? `${14}px` : `${this.toolTipSize}px`
     );
 
     switch (this.tooltipPosition) {
