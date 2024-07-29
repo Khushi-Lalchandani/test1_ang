@@ -1,0 +1,39 @@
+.text {
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 20px;
+  transition: all 0.4s;
+  font-size: 14px;
+}
+input,
+select {
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+input:hover,
+select:hover {
+  border: 1px solid #9c69c9;
+  cursor: pointer;
+}
+.btn {
+  padding: 16px;
+  background-color: #1e851e;
+  color: #fff;
+  border-radius: 50px 10px 10px 50px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.09);
+  width: 150px;
+  transition: all.4s;
+}
+
+.btn-fixed:hover {
+  background-color: #106010;
+}
+.btn-style {
+  margin-left: -10px;
+  background-color: #b14091;
+  border-radius: 4px 50px 50px 4px;
+}
+.btn-style:hover {
+  background-color: #7d0c5d;
+}
