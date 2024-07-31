@@ -35,7 +35,7 @@
     </div>
   </div>
   <br />
-  <div class="row" *ngIf="trim === true">
+  <form class="row" *ngIf="trim === true">
     <div class="col-xs-12">
       <input
         placeholder="Enter text to trim"
@@ -48,17 +48,27 @@
         (Click outside the input field to see trimmed text!)
       </p>
     </div>
-  </div>
+  </form>
   <br />
   <div class="row" *ngIf="trim === false">
     <div class="col-xs-12">
-      <div class="form">
+      <form class="form">
         <label>Select color of tooltip:</label>
-        <input type="color" [(ngModel)]="color" class="form-control" />
+        <input
+          type="color"
+          [(ngModel)]="color"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+        />
         <br />
 
         <label>Select position of tooltip:</label>
-        <select [(ngModel)]="position" position="'top'" class="form-control">
+        <select
+          [(ngModel)]="position"
+          position="'top'"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+        >
           <option value="top">Top</option>
           <option value="left">Left</option>
           <option value="bottom">Bottom</option>
@@ -67,7 +77,11 @@
         <br />
 
         <label>Select font size of tooltip:</label>
-        <select [(ngModel)]="size" class="form-control">
+        <select
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="size"
+          class="form-control"
+        >
           <option value="12">12</option>
           <option value="14">14</option>
           <option value="16">16</option>
@@ -79,7 +93,7 @@
           <option value="32">32</option>
           <option value="36">36</option>
         </select>
-      </div>
+      </form>
       <br />
     </div>
   </div>

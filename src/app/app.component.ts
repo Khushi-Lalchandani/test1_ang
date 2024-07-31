@@ -6,9 +6,9 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  color: string = '';
-  position: string = '';
-  size: number = 0;
+  color: string = '#000';
+  position: string = 'top';
+  size: number = 14;
   trim = false;
   constructor() {}
   ngOnInit(): void {}

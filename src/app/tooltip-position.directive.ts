@@ -33,16 +33,8 @@ export class TooltipPositionDirective implements OnInit {
   }
   private showTooltip() {
     this.renderer.setStyle(this.tooltip, 'visibility', 'visible');
-    this.renderer.setStyle(
-      this.tooltip,
-      'color',
-      this.toolTipColor === '' ? '#000' : this.toolTipColor
-    );
-    this.renderer.setStyle(
-      this.tooltip,
-      'font-size',
-      this.toolTipSize === 0 ? `${14}px` : `${this.toolTipSize}px`
-    );
+    this.renderer.setStyle(this.tooltip, 'color', this.toolTipColor);
+    this.renderer.setStyle(this.tooltip, 'font-size', `${this.toolTipSize}px`);
 
     switch (this.tooltipPosition) {
       case 'top':
@@ -71,14 +63,6 @@ export class TooltipPositionDirective implements OnInit {
           `translate(-${this.tooltip.clientWidth}px,-${this.tooltip.clientHeight}px)`
         );
         break;
-      default:
-        this.renderer.setStyle(
-          this.tooltip,
-          'transform',
-          `translateY(-${
-            this.tooltip.clientHeight + this.tooltip.clientWidth / 6
-          }px)`
-        );
     }
   }
   private hideTooltip() {
