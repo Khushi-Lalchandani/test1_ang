@@ -10,11 +10,10 @@ import {
 @Directive({
   selector: '[appTooltip]',
 })
-export class TooltipPositionDirective implements OnInit {
-  @Input() tooltipPosition!: string;
-  @Input() toolTipColor!: string;
-  @Input() toolTipSize!: number;
+export class appTooltipDriective implements OnInit {
   @Input() tooltipText!: string;
+  @Input() result: any;
+
   tooltip!: HTMLElement;
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
@@ -33,10 +32,14 @@ export class TooltipPositionDirective implements OnInit {
   }
   private showTooltip() {
     this.renderer.setStyle(this.tooltip, 'visibility', 'visible');
-    this.renderer.setStyle(this.tooltip, 'color', this.toolTipColor);
-    this.renderer.setStyle(this.tooltip, 'font-size', `${this.toolTipSize}px`);
+    this.renderer.setStyle(this.tooltip, 'color', this.result['bgcolor']);
+    this.renderer.setStyle(
+      this.tooltip,
+      'font-size',
+      `${this.result['size']}px`
+    );
 
-    switch (this.tooltipPosition) {
+    switch (this.result['position']) {
       case 'top':
         this.renderer.setStyle(
           this.tooltip,
@@ -61,6 +64,15 @@ export class TooltipPositionDirective implements OnInit {
           this.tooltip,
           'transform',
           `translate(-${this.tooltip.clientWidth}px,-${this.tooltip.clientHeight}px)`
+        );
+        break;
+      default:
+        this.renderer.setStyle(
+          this.tooltip,
+          'transform',
+          `translateY(-${
+            this.tooltip.clientHeight + this.tooltip.clientWidth / 6
+          }px)`
         );
         break;
     }

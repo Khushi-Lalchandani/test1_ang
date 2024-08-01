@@ -10,6 +10,15 @@ export class AppComponent implements OnInit {
   position: string = 'top';
   size: number = 14;
   trim = false;
+  data = {};
   constructor() {}
   ngOnInit(): void {}
+  applyChanges(): {} {
+    this.data = {
+      bgcolor: this.color,
+      position: this.position,
+      size: this.size,
+    };
+    return this.data;
+  }
 }

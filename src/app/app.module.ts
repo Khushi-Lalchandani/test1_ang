@@ -4,10 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './highlight.directive';
 import { TrimDirective } from './trim.directive';
-import { TooltipPositionDirective } from './tooltip-position.directive';
+import { appTooltipDriective } from './appTooltip';
 
 @NgModule({
-  declarations: [AppComponent, HighlightDirective, TrimDirective, TooltipPositionDirective],
+  declarations: [
+    AppComponent,
+    HighlightDirective,
+    TrimDirective,
+    appTooltipDriective,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

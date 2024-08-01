@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-xs-12" style="display: flex; justify-content: center">
       <button
-        class="btn btn-fixed"
+        class="btn1 btn-fixed"
         (click)="trim = true"
         [ngClass]="{
           'active-btn': trim === true,
@@ -23,7 +23,7 @@
         Trim text
       </button>
       <button
-        class="btn btn-style"
+        class="btn1 btn-style"
         (click)="trim = false"
         [ngClass]="{
           'active-btn': trim === false,
@@ -65,7 +65,6 @@
         <label>Select position of tooltip:</label>
         <select
           [(ngModel)]="position"
-          position="'top'"
           [ngModelOptions]="{ standalone: true }"
           class="form-control"
         >
@@ -93,6 +92,10 @@
           <option value="32">32</option>
           <option value="36">36</option>
         </select>
+        <br />
+        <button type="submit" class="btn btn-change" (click)="applyChanges()">
+          Apply changes
+        </button>
       </form>
       <br />
     </div>
@@ -106,10 +109,8 @@
   <div class="row" style="text-align: center" *ngIf="trim === false">
     <p
       appTooltip
-      [tooltipPosition]="position"
-      [toolTipColor]="color"
-      [toolTipSize]="size"
       [tooltipText]="'This is a custom tooltip directive'"
+      [result]="data"
       style="
         cursor: pointer;
         display: inline-block;

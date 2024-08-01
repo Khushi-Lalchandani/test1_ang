@@ -16,17 +16,16 @@ select:hover {
   border: 1px solid #9c69c9;
   cursor: pointer;
 }
-.btn {
+.btn1 {
   padding: 16px;
   background-color: #7d0c5d;
   color: #fff;
   border-radius: 50px 4px 4px 50px;
-
   width: 150px;
-  outline: none;
+  border: none;
   transition: all.2s;
 }
-.btn:hover {
+.btn1:hover {
   transform: scale(1.04);
 }
 .btn-style {
@@ -44,4 +43,14 @@ select:hover {
 }
 .unactive-btn {
   background-color: #b14091;
+}
+.btn-change {
+  background-color: #5151c9;
+  border-radius: 12px;
+  padding: 7px 14px;
+  color: #fff;
+}
+.btn-change:hover {
+  background-color: #4a4ac1;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.04);
 }
